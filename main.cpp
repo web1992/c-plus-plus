@@ -8,10 +8,11 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[])
+{
     // insert code here...
     std::cout << "Hello, World!\n";
-    int  a = 100;
+    int a = 100;
     std::cout << a;
     std::cout << std::endl;
     std::string name;
