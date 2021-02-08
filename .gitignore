@@ -29,7 +29,13 @@ target/
 build/
 
 ### VS Code ###
-.vscode/
+#.vscode/
 
 ### cpp
 *.out
+
+## libCL.dylib.dSYM
+
+libCL.dylib.dSYM
+
+*.log
