@@ -10,7 +10,6 @@ g++  -I/usr/local/jdk1.8.0_152/include -I/usr/local/jdk1.8.0_152/include/linux  
 # /Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/jre/lib
 g++ -I/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/include/darwin -o libCL.dylib -g -shared -fPIC  cl.cpp
 
-
-```
-
+## run
 java -Djava.library.path=. CL
+```

@@ -33,5 +33,6 @@ JNIEXPORT jclass JNICALL Java_CL_makeClass(JNIEnv *env, jobject obj, jstring nam
 
     jclass clazz = env->DefineClass(str, NULL, jbarray, len);
 
+    delete jbarray;
     return clazz;
 }
