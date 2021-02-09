@@ -59,6 +59,9 @@
         "sstream": "cpp",
         "tuple": "cpp",
         "unordered_map": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "deque": "cpp",
+        "filesystem": "cpp",
+        "stack": "cpp"
     }
 }
