@@ -17,10 +17,11 @@ const int BUFFSIZE = 1024;
 int isClass(string f);
 void append(FILE *source, FILE *dest);
 void enc_file(FILE *f);
+int process_file(const char * f);
 
 // g++ encjar.cpp && ./a.out demo.jar enc_demo.jar
 // jar -cfm0 classes.jar META-INF/MANIFEST.MF -C .  .
-int main2(int argc, const char *argv[])
+int main(int argc, const char *argv[])
 {
 
     // 读取jar 或者 class 文件，获取byte 字节
@@ -49,9 +50,10 @@ int main2(int argc, const char *argv[])
     std::cout << jar << std::endl;
     system(jar.c_str());
 
+    process_file(TEMP_DIR.c_str());
     // rm tempFile
-    string rm = "rm -rf " + TEMP_DIR;
-    system(rm.c_str());
+    //string rm = "rm -rf " + TEMP_DIR;
+    //system(rm.c_str());
     return 0;
 }
 
@@ -99,7 +101,7 @@ int readFileList(char *basePath, vector<string> &files)
     return 1;
 }
 
-int main(void)
+int process_file(const char * path)
 {
     DIR *dir;
     char basePath[1000];
@@ -112,7 +114,7 @@ int main(void)
 
     ///get the file list
     memset(basePath, '\0', sizeof(basePath));
-    strcpy(basePath, "./zzzz");
+    strcpy(basePath, path);
     readFileList(basePath, files);
 
     int size = files.size();
