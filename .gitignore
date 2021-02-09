@@ -40,3 +40,4 @@ libCL.dylib.dSYM
 
 *.log
 *.jar
+tempDir/
