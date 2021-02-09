@@ -39,3 +39,4 @@ build/
 libCL.dylib.dSYM
 
 *.log
+*.jar
