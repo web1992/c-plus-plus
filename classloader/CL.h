@@ -13,14 +13,14 @@ extern "C"
  * Method:    makeClass
  * Signature: (Ljava/lang/String;[B)Ljava/lang/Class;
  */
-  JNIEXPORT jclass JNICALL Java_CL_makeClass(JNIEnv *, jobject, jstring, jbyteArray);
+  JNIEXPORT jclass JNICALL Java_cn_web1992_cl_CL_makeClass(JNIEnv *, jobject, jstring, jbyteArray);
 
   /*
  * Class:     CL
  * Method:    DisplayHello
  * Signature: ()V
  */
-  JNIEXPORT void JNICALL Java_CL_DisplayHello(JNIEnv *, jobject);
+  JNIEXPORT void JNICALL Java_cn_web1992_cl_CL_DisplayHello(JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }

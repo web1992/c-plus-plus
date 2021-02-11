@@ -15,9 +15,8 @@ const string CLASS = ".class";
 const int BUFFSIZE = 1024;
 
 int isClass(string f);
-void append(FILE *source, FILE *dest);
 void enc_file(FILE *f);
-int process_file(const char * f);
+int process_file(const char *f);
 
 // g++ encjar.cpp && ./a.out demo.jar enc_demo.jar
 // jar -cfm0 classes.jar META-INF/MANIFEST.MF -C .  .
@@ -101,7 +100,7 @@ int readFileList(char *basePath, vector<string> &files)
     return 1;
 }
 
-int process_file(const char * path)
+int process_file(const char *path)
 {
     DIR *dir;
     char basePath[1000];
@@ -123,7 +122,7 @@ int process_file(const char * path)
         string f = files[i];
         if (isClass(f))
         {
-            cout << "file is class : " << f << endl;
+            //cout << "file is class : " << f << endl;
 
             string new_name = f + ".bak";
             rename(f.c_str(), new_name.c_str());
@@ -150,7 +149,6 @@ int process_file(const char * path)
             fclose(fs);
             fclose(ft);
             remove(new_name.c_str());
-
         }
     }
 
@@ -175,6 +173,7 @@ int isClass(string f)
 
 void enc_file(FILE *f)
 {
-    char chs[2] = {1, 2};
-    fwrite(chs, sizeof(char), 2, f);
+    string ss="2233";
+    const char *chs = ss.c_str();
+    fwrite(chs, sizeof(char), 4, f);
 }
