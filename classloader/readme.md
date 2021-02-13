@@ -13,3 +13,5 @@ g++ -I/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/include -
 ## run
 java -Djava.library.path=. CL
 ```
+
+g++ -I/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/include/darwin -o libCLBOOT.dylib -g -shared -fPIC  CLBOOT.cpp
