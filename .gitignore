@@ -36,7 +36,7 @@ build/
 
 ## libCL.dylib.dSYM
 
-libCL.dylib.dSYM
+libCL*
 
 *.log
 *.jar
