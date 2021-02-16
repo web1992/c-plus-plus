@@ -21,5 +21,7 @@ int main()
 
     std::cout << "(*pp).name = " << (*pp).name << std::endl;
     std::cout << "(*pp).age = " << (*pp).age << std::endl;
+    
+    delete pp;
     return 0;
 }
