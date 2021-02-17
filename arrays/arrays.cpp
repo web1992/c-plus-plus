@@ -15,6 +15,6 @@ int main()
     cout << "array address=" << &nums << endl;
     cout << "array address=" << &nums[2] << endl;
 
-    delete [] nums;
+    delete[] nums;
     return 0;
 }
