@@ -22,6 +22,7 @@ int sum(int arr[][4], int len)
     {
         for (int j = 0; j < 4; j++)
         {
+            std::cout << "arr[" << i << "][" << j << "]=" << arr[i][j] << std::endl;
             total += arr[i][j];
         }
     }
