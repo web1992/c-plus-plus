@@ -18,7 +18,7 @@ void printNum(int (*fp)(const char[], const char ch))
     char chs[] = "AABBCCDDEEFF";
     char ch = 'A';
 
-    int count = fp(chs, ch);
+    int count = (*fp)(chs, ch);
 
     std::cout << "printNum count=" << count << std::endl;
 }
