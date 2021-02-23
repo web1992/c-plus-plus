@@ -23,7 +23,13 @@ JNIEXPORT jclass JNICALL Java_cn_web1992_cl_CL_makeClass(JNIEnv *env, jobject ob
     // std::cout << "GetVersion," << v << std::endl;
 
     const char *str = env->GetStringUTFChars(name, 0);
-    std::cout << "JNI make class Name: " << str << std::endl;
+    //std::cout << "JNI make class Name: " << str << std::endl;
+    // const char str_java[] = "java";
+
+    // if (0 == strcmp(str, str_java))
+    // {
+    //     return NULL;
+    // }
 
     //std::cout << "bs," << byarray << std::endl;
 
@@ -33,29 +39,36 @@ JNIEXPORT jclass JNICALL Java_cn_web1992_cl_CL_makeClass(JNIEnv *env, jobject ob
 
     //jbyte *dDate = (jbyte *)jbarray;
 
-    jclass clazz;
+    jclass clazz = NULL;
 
-    string ss = "2233";
-    const char *chs = ss.c_str();
-    const char *str2 = getFirstChar(env, byarray);
-    size_t c = strcmp(chs, str2);
+    // string ss = "2233";
+    // const char *chs = ss.c_str();
+    // const char *str2 = getFirstChar(env, byarray);
+    // size_t c = strcmp(chs, str2);
+    // delete str2;
 
-    // std::cout << "chs," << chs << "str2" << str2 << std::endl;
+    // //std::cout << "chs," << chs << "str2" << str2 << std::endl;
 
-    if (c == 0)
-    {
-        std::cout << "enc clazz" << std::endl;
-        env->GetByteArrayRegion(byarray, 4, len - 5, jbarray);
-        clazz = env->DefineClass(str, NULL, jbarray, len - 5);
-    }
-    else
-    {
-        std::cout << "normal clazz" << std::endl;
-        env->GetByteArrayRegion(byarray, 0, len, jbarray);
-        clazz = env->DefineClass(str, NULL, jbarray, len);
-    }
-    std::cout << "clazz=" << clazz << std::endl;
-    delete jbarray;
+    // if (c == 0)
+    // {
+    //     std::cout << "enc clazz" << std::endl;
+    //     env->GetByteArrayRegion(byarray, 4, len - 5, jbarray);
+    //     clazz = env->DefineClass(str, obj, jbarray, len - 5);
+    //     env->ReleaseByteArrayElements(byarray, jbarray, 0);
+    // }
+    // else
+    // {
+    //     std::cout << "normal clazz" << std::endl;
+    //     env->GetByteArrayRegion(byarray, 0, len, jbarray);
+    //     clazz = env->DefineClass(str, obj, jbarray, len);
+    //     env->ReleaseByteArrayElements(byarray, jbarray, 0);
+    // }
+
+    env->GetByteArrayRegion(byarray, 0, len, jbarray);
+    clazz = env->DefineClass(str, obj, jbarray, len);
+    // std::cout << "clazz=" << clazz << std::endl;
+    //delete jbarray;
+    env->ReleaseByteArrayElements(byarray, jbarray, 0);
     return clazz;
 }
 
@@ -69,6 +82,6 @@ char *getFirstChar(JNIEnv *env, jbyteArray bytearray)
     memset(chars, 0, 4 + 1);
     memcpy(chars, bytes, 4);
     chars[chars_len] = 0;
-    env->ReleaseByteArrayElements(bytearray, bytes, 0);
+    //env->ReleaseByteArrayElements(bytearray, bytes, 0);
     return chars;
 }
