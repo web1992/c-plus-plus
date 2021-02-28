@@ -15,6 +15,8 @@ public class CL {
 
     public native void DisplayHello();
 
+    public final native byte[] encByte(byte[] bytes);
+
     public static void main(String[] args) throws Exception {
 
         new CL().DisplayHello();

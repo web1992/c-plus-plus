@@ -14,8 +14,8 @@ char *getFirstChar(JNIEnv *env, jbyteArray bytearray);
 JNIEXPORT jclass JNICALL Java_org_springframework_boot_loader_LaunchedURLClassLoader_makeClass(JNIEnv *env, jobject obj, jstring name, jbyteArray byarray)
 {
 
-    // jint v = env->GetVersion();
-    // std::cout << "GetVersion," << v << std::endl;
+    jint v = env->GetVersion();
+    std::cout << "GetVersion," << v << std::endl;
 
     const char *str = env->GetStringUTFChars(name, 0);
     std::cout << "JNI make class Name: " << str << std::endl;
@@ -41,13 +41,13 @@ JNIEXPORT jclass JNICALL Java_org_springframework_boot_loader_LaunchedURLClassLo
     {
         std::cout << "enc clazz" << std::endl;
         env->GetByteArrayRegion(byarray, 4, len - 5, jbarray);
-        clazz = env->DefineClass(str, NULL, jbarray, len - 5);
+        clazz = env->DefineClass(str, obj, jbarray, len - 5);
     }
     else
     {
         std::cout << "normal clazz" << std::endl;
         env->GetByteArrayRegion(byarray, 0, len, jbarray);
-        clazz = env->DefineClass(str, NULL, jbarray, len);
+        clazz = env->DefineClass(str, obj, jbarray, len);
     }
     std::cout << "clazz=" << clazz << std::endl;
     delete jbarray;

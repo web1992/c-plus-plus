@@ -34,8 +34,8 @@ int main(int argc, const char *argv[])
     }
 
     // get param
-    const char *sourceFile = &(*argv[1]);
-    const char *targetFile = &(*argv[2]);
+    const char *sourceFile = argv[1];
+    const char *targetFile = argv[2];
     string s = sourceFile;
     string unzip = "unzip  -oq " + s + " -d " + TEMP_DIR;
 
@@ -157,6 +157,27 @@ int process_file(const char *path)
 
 int isClass(string f)
 {
+    // cout << "f is  : " << f << endl;
+    // BOOT-INF
+    string bi = "BOOT-INF";
+    if (strstr(f.c_str(), bi.c_str()) == NULL)
+    {
+        return 0;
+    }
+    // CL.class
+    string cl_str = "/CL.class";
+    int ni = f.find_last_of("/");
+    const int ll = cl_str.length();
+
+    char sufix_cl[ll];
+    int cpLen = f.copy(sufix_cl, ll, ni);
+    sufix_cl[ll] = '\0';
+    
+    if (strcmp(sufix_cl, cl_str.c_str()) == 0)
+    {
+        cout << "sufix_cl : " << sufix_cl << endl;
+        return 0;
+    }
     int idx = f.find_last_of(".");
     int strLen = CLASS.length();
     char sufix[strLen];
@@ -165,7 +186,7 @@ int isClass(string f)
     string s = sufix;
     if (s.compare(CLASS) == 0)
     {
-        //cout << "file is class : " << sufix << endl;
+        // cout << "file is class : " << sufix << endl;
         return 1;
     }
     return 0;
@@ -173,7 +194,7 @@ int isClass(string f)
 
 void enc_file(FILE *f)
 {
-    string ss="2233";
+    string ss = "2233";
     const char *chs = ss.c_str();
-    fwrite(chs, sizeof(char), 4, f);
+    fwrite(chs, sizeof(char), 1, f);
 }

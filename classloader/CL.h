@@ -22,6 +22,12 @@ extern "C"
  */
   JNIEXPORT void JNICALL Java_cn_web1992_cl_CL_DisplayHello(JNIEnv *, jobject);
 
+  /*
+ * Class:     cn_web1992_cl_CL
+ * Method:    encByte
+ * Signature: ([B)[B
+ */
+  JNIEXPORT jbyteArray JNICALL Java_cn_web1992_cl_CL_encByte(JNIEnv *, jobject, jbyteArray);
 #ifdef __cplusplus
 }
 #endif
