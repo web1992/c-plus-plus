@@ -1,7 +1,7 @@
 #include <iostream>
 
-int a = 1;
-static int b = 2;
+int a = 1;// 外部链接
+static int b = 2;// 内部链接
 
 int main()
 {
