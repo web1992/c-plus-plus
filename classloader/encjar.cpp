@@ -172,7 +172,7 @@ int isClass(string f)
     char sufix_cl[ll];
     int cpLen = f.copy(sufix_cl, ll, ni);
     sufix_cl[ll] = '\0';
-    
+
     if (strcmp(sufix_cl, cl_str.c_str()) == 0)
     {
         cout << "sufix_cl : " << sufix_cl << endl;
@@ -196,5 +196,6 @@ void enc_file(FILE *f)
 {
     string ss = "2233";
     const char *chs = ss.c_str();
-    fwrite(chs, sizeof(char), 1, f);
+    size_t s = fwrite(chs, sizeof(char), 4, f);
+    // cout << "s= " << s << endl;
 }
