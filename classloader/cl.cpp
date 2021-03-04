@@ -18,7 +18,7 @@ JNIEXPORT void JNICALL Java_cn_web1992_cl_CL_DisplayHello(JNIEnv *env, jobject o
 
 JNIEXPORT jbyteArray JNICALL Java_cn_web1992_cl_CL_encByte(JNIEnv *env, jobject, jbyteArray byarray)
 {
-    std::cout << "Java_cn_web1992_cl_CL_encByte "  << std::endl;
+    std::cout << "Java_cn_web1992_cl_CL_encByte " << std::endl;
     jsize len = env->GetArrayLength(byarray);
     // C++中的BYTE[]转jbyteArray
     //nOutSize是BYTE数组的长度 BYTE pData[]
@@ -64,8 +64,8 @@ JNIEXPORT jclass JNICALL Java_cn_web1992_cl_CL_makeClass(JNIEnv *env, jobject ob
 
     if (c == 0)
     {
-        std::cout << "enc clazz" << std::endl;
-        env->GetByteArrayRegion(byarray, 5, len - 5, jbarray);
+        std::cout << "enc clazz =" << str << std::endl;
+        env->GetByteArrayRegion(byarray, 4, len - 5, jbarray);
         clazz = env->DefineClass(str, obj, jbarray, len - 5);
         env->ReleaseByteArrayElements(byarray, jbarray, 0);
     }
@@ -76,7 +76,7 @@ JNIEXPORT jclass JNICALL Java_cn_web1992_cl_CL_makeClass(JNIEnv *env, jobject ob
         clazz = env->DefineClass(str, obj, jbarray, len);
         env->ReleaseByteArrayElements(byarray, jbarray, 0);
     }
-
+    // std::cout << "clazz=" << clazz << std::endl;
     // env->GetByteArrayRegion(byarray, 0, len, jbarray);
     // clazz = env->DefineClass(str, obj, jbarray, len);
     // // std::cout << "clazz=" << clazz << std::endl;
