@@ -42,3 +42,4 @@ libCL*
 *.jar
 tempDir/
 demo/
+encjar
