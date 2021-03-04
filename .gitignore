@@ -43,3 +43,4 @@ libCL*
 tempDir/
 demo/
 encjar
+libCL.dylib
