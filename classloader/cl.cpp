@@ -24,8 +24,23 @@ JNIEXPORT jbyteArray JNICALL Java_cn_web1992_cl_CL_encByte(JNIEnv *env, jobject,
     //nOutSize是BYTE数组的长度 BYTE pData[]
     jbyte *by = (jbyte *)byarray;
     jbyteArray jarray = env->NewByteArray(len);
-    env->SetByteArrayRegion(jarray, 5, len - 5, by);
-    env->ReleaseByteArrayElements(byarray, by, 0);
+
+    string ss = "2233";
+    const char *chs = ss.c_str();
+    const char *str2 = getFirstChar(env, byarray);
+    size_t c = strcmp(chs, str2);
+    delete str2;
+    if (c == 0)
+    {
+        env->SetByteArrayRegion(jarray, 4, len - 5, by);
+        env->ReleaseByteArrayElements(byarray, by, 0);
+    }
+    else
+    {
+        env->SetByteArrayRegion(jarray, 0, len, by);
+        env->ReleaseByteArrayElements(byarray, by, 0);
+    }
+
     return jarray;
 }
 
