@@ -1,5 +1,8 @@
 #include <iostream>
 
+#ifndef PERSON_
+#define PERSON_
+
 class Person
 {
 
@@ -16,3 +19,4 @@ public:
     void setFname(std::string fname);
     void setLname(std::string lname);
 };
+#endif PERSON_
