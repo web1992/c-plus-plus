@@ -8,9 +8,9 @@ void Person::show(const Person &p)
 
 void Person::newPerson(Person &p)
 {
-    std::cout << "fname:" << std::endl;
+    std::cout << "Enter your fname:" << std::endl;
     std::cin >> Person::fname;
-    std::cout << "lname:" << std::endl;
+    std::cout << "Enter your lname:" << std::endl;
     std::cin >> Person::lname;
 }
 
@@ -21,4 +21,18 @@ void Person::setFname(std::string fname)
 void Person::setLname(std::string lname)
 {
     Person::lname = lname;
+}
+
+Person::Person()
+{
+    std::cout << "default run" << std::endl;
+}
+Person::Person(std::string _fname, std::string _lname)
+{
+    Person::fname = _fname;
+    Person::lname = _lname;
+}
+Person::~Person()
+{
+    std::cout << "destory run" << std::endl;
 }
