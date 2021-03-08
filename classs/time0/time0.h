@@ -23,4 +23,4 @@ public:
     friend Time operator*(double n, const Time &t);
     friend std::ostream &operator<<(std::ostream &s, const Time &t);
 };
-#endif TIME0_
+#endif // TIME0_
