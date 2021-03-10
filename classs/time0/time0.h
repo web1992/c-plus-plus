@@ -6,7 +6,7 @@ class Time
 {
 
 private:
-    static const int M_UNIT = 60;
+    static const int M_UNIT = 60;// must use static key word
     int hours;
     int minutes;
 
