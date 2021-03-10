@@ -11,5 +11,8 @@ int main()
     // 恢复
     std::cout.precision(pre);
     std::cout << "num=" << num << std::endl;
+
+    // static const fmtflags fixed       = 0x0004;
+    // std::ios_base::fixed
     return 0;
 }
