@@ -22,7 +22,7 @@ public:
 
     ~JustTest()
     {
-        cout << word << " constructed\n";
+        cout << word << " destoryed\n";
     }
 
     void Show() const
