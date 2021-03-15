@@ -5,6 +5,8 @@ class StringBad
 {
     char *str;
     int len;
+    static int num_strings;
+
     StringBad &StringBad::operator=(StringBad &s)
     {
         if (this == &s)
