@@ -65,6 +65,7 @@
         "stack": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "__functional_03": "cpp"
+        "__functional_03": "cpp",
+        "valarray": "cpp"
     }
 }
