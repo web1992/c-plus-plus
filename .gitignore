@@ -33,6 +33,7 @@ build/
 
 ### cpp
 *.out
+*.o
 
 ## libCL.dylib.dSYM
 
