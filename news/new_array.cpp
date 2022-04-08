@@ -7,8 +7,8 @@ int main()
 
     int *p_numbers = new int[3];
     p_numbers[0] = 1;
-    p_numbers[1] = 2;
-    p_numbers[2] = 3;
+    p_numbers[1] = 20;
+    p_numbers[2] = 30;
 
     std::cout << "p_numbers address is " << p_numbers << std::endl;
     std::cout << "p_numbers[0] is " << p_numbers[0] << std::endl;

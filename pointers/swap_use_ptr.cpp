@@ -11,13 +11,13 @@ void swap_by_pointer(int *a, int *b)
 
 int main()
 {
-    int a=100;
-    int b=200;
-     std::cout << "a=" <<a << ",b=" << b << std::endl;
+    int a = 100;
+    int b = 200;
+    std::cout << "a=" << a << ",b=" << b << std::endl;
 
-    swap_by_pointer(&a,&b);
+    swap_by_pointer(&a, &b);
 
-    std::cout << "a=" <<a << ",b=" << b << std::endl;
+    std::cout << "a=" << a << ",b=" << b << std::endl;
 
     return 0;
 }

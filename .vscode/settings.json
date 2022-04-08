@@ -66,6 +66,12 @@
         "fstream": "cpp",
         "iomanip": "cpp",
         "__functional_03": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "__bits": "cpp",
+        "clocale": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "variant": "cpp",
+        "stdio.h": "c"
     }
 }
