@@ -1,6 +1,7 @@
 #include <iostream>
 #include "person.h"
 
+// g++ *.cpp&& ./a.out
 int main()
 {
     Person p;

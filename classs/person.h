@@ -19,4 +19,4 @@ public:
     void setFname(std::string fname);
     void setLname(std::string lname);
 };
-#endif PERSON_
+#endif //PERSON_
