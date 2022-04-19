@@ -5,7 +5,6 @@ void swap_by_pointer(int *a, int *b);
 
 int main()
 {
-
     int num = 1;
     int &num_ref = num; // 声明引用变量
 
