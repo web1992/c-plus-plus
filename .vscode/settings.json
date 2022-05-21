@@ -72,6 +72,20 @@
         "compare": "cpp",
         "concepts": "cpp",
         "variant": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "condition_variable": "cpp",
+        "forward_list": "cpp",
+        "numbers": "cpp",
+        "numeric": "cpp",
+        "queue": "cpp",
+        "random": "cpp",
+        "semaphore": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "unordered_set": "cpp",
+        "*.tcc": "cpp",
+        "memory_resource": "cpp",
+        "stop_token": "cpp",
+        "cinttypes": "cpp"
     }
 }
